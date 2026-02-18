@@ -13,7 +13,7 @@ public class SecurityConfig {
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http
-			.csrf(csrf -> csrf.disable()) // Disable CSRF for API (enable if adding forms)
+			.csrf(csrf -> csrf.disable())
 			.headers(headers -> headers
 				.frameOptions(frameOptions -> frameOptions.deny())
 				.contentSecurityPolicy(csp -> csp
@@ -27,9 +27,7 @@ public class SecurityConfig {
 			.authorizeHttpRequests(auth -> auth
 				.requestMatchers("/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
 				.requestMatchers("/actuator/health").permitAll()
-				// TODO: Enable authentication for production
-				// .anyRequest().authenticated()
-				.anyRequest().permitAll() // Allow all for learning - change to authenticated() for production
+				.anyRequest().permitAll()
 			);
 
 		return http.build();

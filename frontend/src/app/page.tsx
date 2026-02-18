@@ -12,7 +12,7 @@ export default function Home() {
           AquaCentral
         </h1>
         <p className="text-center mb-8 text-lg">
-          Welcome to AquaCentral - Your Spring Boot + Next.js Application
+          Welcome to AquaCentral
         </p>
         <div className="flex justify-center">
           <button
