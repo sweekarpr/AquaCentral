@@ -1,0 +1,85 @@
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment variables - CRITICAL: Never commit these!
+.env
+.env.*
+!.env.example
+.env.local
+.env.*.local
+.env.production
+.env.development
+*.env
+
+# Secrets and credentials
+*.key
+*.pem
+*.p12
+*.jks
+*.keystore
+secrets/
+credentials/
+*.secret
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# OS
+Thumbs.db
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Build outputs
+backend/build/
+backend/bin/
+backend/.gradle/
+backend/out/
+frontend/.next/
+frontend/dist/
+frontend/out/
+frontend/node_modules/
+*.tsbuildinfo
+*.class
+
+# Gradle
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.bak
+*.cache
+
+# Package manager locks (optional - some teams prefer to commit these)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Docker
+docker-compose.override.yml
+*.dockerignore.local
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Application specific
+application-local.yml
+application-secrets.yml
+
