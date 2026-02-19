@@ -2,7 +2,7 @@ spring:
   application:
     name: aquacentral-backend
   profiles:
-    active: ${SPRING_PROFILES_ACTIVE:dev}
+    active: ${SPRING_PROFILES_ACTIVE:local}
 
   jpa:
     hibernate:
