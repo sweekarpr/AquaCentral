@@ -4,6 +4,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 
@@ -45,7 +47,7 @@ public class SecurityConfig {
 			.authorizeHttpRequests(auth -> auth
 
 				// Public endpoints (no authentication required)
-				.requestMatchers("/api/health", "/api-docs/**", "/swagger-ui.html", "/swagger-ui/**").permitAll()
+				.requestMatchers("/api/health", "/api/tanks", "/api/tanks/**", "/api-docs/**", "/swagger-ui.html", "/swagger-ui/**").permitAll()
 
 				// All other endpoints require authentication
 				.anyRequest().authenticated()
@@ -58,5 +60,10 @@ public class SecurityConfig {
 			.logout(logout -> logout.permitAll());
 
 		return http.build();
+	}
+
+	@Bean
+	public PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
 	}
 }
